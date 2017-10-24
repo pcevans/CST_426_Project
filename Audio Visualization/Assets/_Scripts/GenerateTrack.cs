@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class GenerateTrack : MonoBehaviour {
 
-	// Use this for initialization
 	void Start () {
 		Vector3[] tpa = GenerateFreqAvgBandPath.trackPointArray;
 	
@@ -12,11 +11,8 @@ public class GenerateTrack : MonoBehaviour {
 		Mesh mesh = new Mesh ();
 		mf.mesh = mesh;
 
-		/**/
 		Vector3[] vertices = new Vector3[(50 + 1) * 2];
 
-		//vertices [0] = new Vector3 (-4, 0, 0);
-		//vertices [1] = new Vector3 (4, 0, 0);
 		for (int i = 0; i <= 50; i++) {
 			vertices [2 * i + 0] = new Vector3 (-4, 0, i);
 			vertices [2 * i + 1] = new Vector3 (4, 0, i);
@@ -53,12 +49,5 @@ public class GenerateTrack : MonoBehaviour {
 		}
 
 		mesh.uv = uv;
-		/**/
-
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
 	}
 }
