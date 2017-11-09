@@ -1,0 +1,2 @@
+C:\Users\Clay\Documents\GitHub\CST_426_Project\Audio Visualization\obj\Debug\Deck Racer.csprojResolveAssemblyReference.cache
+C:\Users\Clay\Documents\GitHub\CST_426_Project\Audio Visualization\obj\Debug\Assembly-CSharp.dll
