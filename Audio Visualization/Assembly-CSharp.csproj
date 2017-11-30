@@ -51,20 +51,20 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\_Scripts\AddZ.cs" />
-     <Compile Include="Assets\_Scripts\AudioPeer.cs" />
-     <Compile Include="Assets\_Scripts\GenerateAmplitudeTerrain.cs" />
-     <Compile Include="Assets\_Scripts\GenerateFreqAvgBandPath.cs" />
-     <Compile Include="Assets\_Scripts\GenerateFreqBandTerrain.cs" />
-     <Compile Include="Assets\_Scripts\GenerateFreqDoubleBandModHeightTerrain.cs" />
-     <Compile Include="Assets\_Scripts\GenerateFreqSingleBandAddHeightTerrain.cs" />
-     <Compile Include="Assets\_Scripts\GenerateFreqSingleBandSubHeightTerrain.cs" />
-     <Compile Include="Assets\_Scripts\GenerateFreqSingleBandTerrain.cs" />
-     <Compile Include="Assets\_Scripts\GenerateSpectrumTerrain.cs" />
-     <Compile Include="Assets\_Scripts\GenerateTrack.cs" />
-     <Compile Include="Assets\_Scripts\InstantiateCubes.cs" />
-     <Compile Include="Assets\_Scripts\ParamCube.cs" />
-     <Compile Include="Assets\_Scripts\TestAmplitude.cs" />
+     <Compile Include="Assets\Scripts\AudioPeer.cs" />
+     <Compile Include="Assets\Scripts\GenerateFreqAvgBandPath.cs" />
+     <Compile Include="Assets\Scripts\GenerateTrack.cs" />
+     <Compile Include="Assets\Scripts\Old\AddZ.cs" />
+     <Compile Include="Assets\Scripts\Old\GenerateAmplitudeTerrain.cs" />
+     <Compile Include="Assets\Scripts\Old\GenerateFreqBandTerrain.cs" />
+     <Compile Include="Assets\Scripts\Old\GenerateFreqDoubleBandModHeightTerrain.cs" />
+     <Compile Include="Assets\Scripts\Old\GenerateFreqSingleBandAddHeightTerrain.cs" />
+     <Compile Include="Assets\Scripts\Old\GenerateFreqSingleBandSubHeightTerrain.cs" />
+     <Compile Include="Assets\Scripts\Old\GenerateFreqSingleBandTerrain.cs" />
+     <Compile Include="Assets\Scripts\Old\GenerateSpectrumTerrain.cs" />
+     <Compile Include="Assets\Scripts\Old\InstantiateCubes.cs" />
+     <Compile Include="Assets\Scripts\Old\ParamCube.cs" />
+     <Compile Include="Assets\Scripts\Old\TestAmplitude.cs" />
      <None Include="Assets\Standard Assets\Vehicles\Car\Shaders\DiffuseReflectiveShader.shader" />
      <None Include="Assets\Standard Assets\Vehicles\Aircraft\AircraftGuidelines.txt" />
      <None Include="Assets\Standard Assets\Vehicles\Car\Shaders\ReflectiveDiffuseSpecTransp.shader" />
