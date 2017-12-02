@@ -119,7 +119,7 @@ namespace DeckRacer {
 				sum += i * _audioBand [i];
 			}
 			sum /= denominator;
-			_avgFreqBand = (int)sum;//((int)sum + _avgFreqBand) / 2;
+			_avgFreqBand = (int)sum;
 		}
 
 		void GetAmplitude () {
