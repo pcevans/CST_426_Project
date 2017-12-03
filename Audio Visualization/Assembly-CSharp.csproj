@@ -65,6 +65,7 @@
      <Compile Include="Assets\Scripts\Old\InstantiateCubes.cs" />
      <Compile Include="Assets\Scripts\Old\ParamCube.cs" />
      <Compile Include="Assets\Scripts\Old\TestAmplitude.cs" />
+     <Compile Include="Assets\Scripts\Roadifier.cs" />
      <None Include="Assets\Standard Assets\Vehicles\Car\Shaders\DiffuseReflectiveShader.shader" />
      <None Include="Assets\Standard Assets\Vehicles\Aircraft\AircraftGuidelines.txt" />
      <None Include="Assets\Standard Assets\Vehicles\Car\Shaders\ReflectiveDiffuseSpecTransp.shader" />
