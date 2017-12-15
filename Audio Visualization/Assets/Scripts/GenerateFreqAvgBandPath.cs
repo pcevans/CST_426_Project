@@ -6,6 +6,7 @@ using UnityEngine;
 public class GenerateFreqAvgBandPath : MonoBehaviour {
 	public GameObject trackPrefab;
 	public GameObject roadifier;
+	public GameObject car;
 
 	LineRenderer lr;
 	Vector3 currPoint;
@@ -105,33 +106,34 @@ public class GenerateFreqAvgBandPath : MonoBehaviour {
 			//clampNeg = (clampNeg * 9 + -1.0f) / 10f;
 			//clampPos = (clampPos * 9 + 1.0f) / 10f;
 
-			Debug.Log (rotVal + " " + max + " " + maxIdx);
+			//Debug.Log (rotVal + " " + max + " " + maxIdx);
 
 			if (rotVal > 5)
 				rotVal = 5;
 
 			angleXZ += rotVal;
 
-			Debug.Log (angleXZ);
+			//Debug.Log (angleXZ);
 
 			currRot = Quaternion.AngleAxis (angleXZ, Vector3.up);
 		}
 		if (frame % 5 == 0) {
-
-			angleY += .01f;
+			float multiplier = car.GetComponent<Rigidbody> ().velocity.magnitude / 10;
+			angleY += .01f * multiplier;
 			currHeight = Mathf.Sin (angleY) * 10;
 
-			currPoint += currRot * Vector3.forward;
+			Debug.Log (car.GetComponent<Rigidbody> ().velocity.magnitude);
+			currPoint += currRot * (Vector3.forward * multiplier);
 			currPoint.y = currHeight;
 			lr.positionCount += 1;
 			lr.SetPosition (lr.positionCount - 1, currPoint);
 
-
-			if (lr.positionCount % 20 == 0) {
+			const int posCount = 5;
+			if (lr.positionCount % posCount == 0) {
 				lr.GetPositions (trackPointArray);
 				int numPositions = lr.positionCount;
 				List<Vector3> l = new List<Vector3> ();
-				int forCount = (numPositions < 21 ? numPositions : 21);
+				int forCount = (numPositions < posCount + 2 ? numPositions : posCount + 2);
 				for (int i = 0; i < forCount; i++)
 					l.Add (trackPointArray [numPositions - i - 1]);
 				Roadifier r = roadifier.GetComponent<Roadifier> ();
