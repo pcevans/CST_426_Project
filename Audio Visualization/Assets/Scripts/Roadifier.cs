@@ -10,12 +10,13 @@ public class Roadifier : MonoBehaviour {
 	public float terrainClearance = 0.05f;
 	private Mesh mesh;
 	private GameObject currRoad;
+	int roadNumber = 0;
 
-	public void GenerateRoad (List<Vector3> points) {
-		GenerateRoad (points, null);
+	public GameObject GenerateRoad (List<Vector3> points) {
+		return GenerateRoad (points, null);
 	}
 
-	public void GenerateRoad (List<Vector3> points, Terrain terrain) {
+	public GameObject GenerateRoad (List<Vector3> points, Terrain terrain) {
 		// parameters validation
 		CheckParams (points, smoothingFactor);
 
@@ -44,6 +45,7 @@ public class Roadifier : MonoBehaviour {
 		mesh = new Mesh ();
 		mesh.name = "Roadifier Road Mesh";
 
+		var sidings = new List<GameObject> ();
 		var vertices = new List<Vector3> ();
 		var triangles = new List<int> ();
 
@@ -103,9 +105,9 @@ public class Roadifier : MonoBehaviour {
 			vertices.Add (cornerPoint1);
 			vertices.Add (cornerPoint2);
 
-			if (idx % 10 == 0) {
-				Instantiate (siding, cornerPoint1, Quaternion.LookRotation (Vector3.Normalize (nextPoint - currentPoint)));
-				Instantiate (siding, cornerPoint2, Quaternion.LookRotation (Vector3.Normalize (nextPoint - currentPoint)));
+			if (Vector3.Magnitude (nextPoint - currentPoint) > 0) {
+				sidings.Add (Instantiate (siding, cornerPoint1, Quaternion.LookRotation (Vector3.Normalize (nextPoint - currentPoint))));
+				sidings.Add (Instantiate (siding, cornerPoint2, Quaternion.LookRotation (Vector3.Normalize (nextPoint - currentPoint))));
 			}
 
 			int doubleIdx = idx * 2;
@@ -128,7 +130,10 @@ public class Roadifier : MonoBehaviour {
 		mesh.triangles = triangles.ToArray ();
 		mesh.RecalculateNormals ();
 
-		CreateGameObject (mesh);
+		GameObject obj = CreateGameObject (mesh, sidings);
+
+		return obj;
+
 	}
 
 	private void AddSmoothingPoints (List<Vector3> points) {
@@ -157,7 +162,7 @@ public class Roadifier : MonoBehaviour {
 		}
 	}
 
-	private void CreateGameObject (Mesh mesh) {
+	private GameObject CreateGameObject (Mesh mesh, List<GameObject> sidings) {
 		//GameObject.Destroy (currRoad);
 		GameObject obj = new GameObject ("Roadifier Road");
 		currRoad = obj;
@@ -168,6 +173,9 @@ public class Roadifier : MonoBehaviour {
 		MeshCollider mc = obj.GetComponent<MeshCollider> ();
 		mc.sharedMesh = mesh;
 
+		obj.name += " " + roadNumber;
+		roadNumber++;
+
 		obj.transform.SetParent (transform);
 
 		MeshRenderer renderer = obj.GetComponent<MeshRenderer> ();
@@ -176,6 +184,12 @@ public class Roadifier : MonoBehaviour {
 			materials [i] = material;
 		}
 		renderer.materials = materials;
+
+		foreach (GameObject s in sidings) {
+			s.transform.SetParent (obj.transform);
+		}
+
+		return obj;
 	}
 
 	private List<Vector2> GenerateUVs (List<Vector3> vertices) {

@@ -123,8 +123,9 @@ GameObject:
   - component: {fileID: 50913300}
   - component: {fileID: 50913302}
   - component: {fileID: 50913301}
+  - component: {fileID: 50913303}
   m_Layer: 0
-  m_Name: Image (7)
+  m_Name: Freq band 7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -181,6 +182,19 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 50913299}
+--- !u!114 &50913303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 50913299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 191d82687da320b4080d0317bab7f142, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _band: 7
+  bandCols: []
 --- !u!1 &78758927
 GameObject:
   m_ObjectHideFlags: 0
@@ -360,8 +374,9 @@ GameObject:
   - component: {fileID: 227210166}
   - component: {fileID: 227210168}
   - component: {fileID: 227210167}
+  - component: {fileID: 227210169}
   m_Layer: 0
-  m_Name: Image
+  m_Name: Freq band 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -418,6 +433,19 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 227210165}
+--- !u!114 &227210169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 227210165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 191d82687da320b4080d0317bab7f142, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _band: 3
+  bandCols: []
 --- !u!1 &269991388
 GameObject:
   m_ObjectHideFlags: 0
@@ -468,8 +496,9 @@ GameObject:
   - component: {fileID: 302738920}
   - component: {fileID: 302738922}
   - component: {fileID: 302738921}
+  - component: {fileID: 302738923}
   m_Layer: 0
-  m_Name: Image (4)
+  m_Name: Freq band 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -526,6 +555,19 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 302738919}
+--- !u!114 &302738923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 302738919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 191d82687da320b4080d0317bab7f142, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _band: 4
+  bandCols: []
 --- !u!1 &448282438
 GameObject:
   m_ObjectHideFlags: 0
@@ -537,7 +579,7 @@ GameObject:
   - component: {fileID: 448282439}
   - component: {fileID: 448282441}
   m_Layer: 0
-  m_Name: Track generation line (WIP)
+  m_Name: Track generator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -641,8 +683,8 @@ Transform:
   m_LocalPosition: {x: -1000, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 793908392}
-  m_RootOrder: 0
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &448282441
 MonoBehaviour:
@@ -659,8 +701,6 @@ MonoBehaviour:
     type: 2}
   roadifier: {fileID: 1921401705}
   car: {fileID: 1210926897}
-  numberOfPoints: 1000
-  trackGenOn: 0
 --- !u!1 &466923832
 GameObject:
   m_ObjectHideFlags: 0
@@ -721,7 +761,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &503179333
 GameObject:
@@ -846,7 +886,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 8f125778a8e3182418e85be361b007d2, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 69372700a4241354d8b3df22cad135ca, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.18
   m_Pitch: 1
@@ -1014,35 +1054,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _band: 1
---- !u!1 &722956141
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 722956142}
-  m_Layer: 0
-  m_Name: 'IMPORTANT: Choose a camera and unhide one terrain at a time for optimum
-    viewing'
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &722956142
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 722956141}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &757283526
 GameObject:
   m_ObjectHideFlags: 0
@@ -1211,35 +1222,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _band: 5
---- !u!1 &793908391
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 793908392}
-  m_Layer: 0
-  m_Name: Track generators
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &793908392
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 793908391}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 448282440}
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &810919216
 GameObject:
   m_ObjectHideFlags: 0
@@ -1250,8 +1232,9 @@ GameObject:
   - component: {fileID: 810919217}
   - component: {fileID: 810919219}
   - component: {fileID: 810919218}
+  - component: {fileID: 810919220}
   m_Layer: 0
-  m_Name: Image (2)
+  m_Name: Freq band 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1308,6 +1291,19 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 810919216}
+--- !u!114 &810919220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 810919216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 191d82687da320b4080d0317bab7f142, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _band: 1
+  bandCols: []
 --- !u!1 &820603932
 GameObject:
   m_ObjectHideFlags: 0
@@ -1418,8 +1414,9 @@ GameObject:
   - component: {fileID: 855171031}
   - component: {fileID: 855171033}
   - component: {fileID: 855171032}
+  - component: {fileID: 855171034}
   m_Layer: 0
-  m_Name: Image (5)
+  m_Name: Freq band 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1476,6 +1473,19 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 855171030}
+--- !u!114 &855171034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 855171030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 191d82687da320b4080d0317bab7f142, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _band: 5
+  bandCols: []
 --- !u!1 &972105658
 GameObject:
   m_ObjectHideFlags: 0
@@ -1488,7 +1498,7 @@ GameObject:
   - component: {fileID: 972105660}
   - component: {fileID: 972105659}
   m_Layer: 0
-  m_Name: DebugVisualizer
+  m_Name: Significant beat visualizer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1570,7 +1580,7 @@ RectTransform:
   - {fileID: 1477958770}
   - {fileID: 50913300}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1614,9 +1624,41 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400050, guid: 0e7ee4df08df88c4880f43398f9ad2c2, type: 2}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 11400024, guid: 0e7ee4df08df88c4880f43398f9ad2c2, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8200016, guid: 0e7ee4df08df88c4880f43398f9ad2c2, type: 2}
+      propertyPath: panLevelCustomCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8200016, guid: 0e7ee4df08df88c4880f43398f9ad2c2, type: 2}
+      propertyPath: reverbZoneMixCustomCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8200016, guid: 0e7ee4df08df88c4880f43398f9ad2c2, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8200012, guid: 0e7ee4df08df88c4880f43398f9ad2c2, type: 2}
+      propertyPath: panLevelCustomCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8200012, guid: 0e7ee4df08df88c4880f43398f9ad2c2, type: 2}
+      propertyPath: reverbZoneMixCustomCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8200012, guid: 0e7ee4df08df88c4880f43398f9ad2c2, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8200010, guid: 0e7ee4df08df88c4880f43398f9ad2c2, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8200014, guid: 0e7ee4df08df88c4880f43398f9ad2c2, type: 2}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
@@ -1633,8 +1675,9 @@ GameObject:
   - component: {fileID: 1143458436}
   - component: {fileID: 1143458438}
   - component: {fileID: 1143458437}
+  - component: {fileID: 1143458439}
   m_Layer: 0
-  m_Name: Image (1)
+  m_Name: Freq band 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1691,6 +1734,19 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1143458435}
+--- !u!114 &1143458439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1143458435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 191d82687da320b4080d0317bab7f142, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _band: 2
+  bandCols: []
 --- !u!1 &1169868755
 GameObject:
   m_ObjectHideFlags: 0
@@ -1963,8 +2019,9 @@ GameObject:
   - component: {fileID: 1455886286}
   - component: {fileID: 1455886288}
   - component: {fileID: 1455886287}
+  - component: {fileID: 1455886289}
   m_Layer: 0
-  m_Name: Image (3)
+  m_Name: Freq band 0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2021,6 +2078,19 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1455886285}
+--- !u!114 &1455886289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1455886285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 191d82687da320b4080d0317bab7f142, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _band: 0
+  bandCols: []
 --- !u!1 &1477958769
 GameObject:
   m_ObjectHideFlags: 0
@@ -2031,8 +2101,9 @@ GameObject:
   - component: {fileID: 1477958770}
   - component: {fileID: 1477958772}
   - component: {fileID: 1477958771}
+  - component: {fileID: 1477958773}
   m_Layer: 0
-  m_Name: Image (6)
+  m_Name: Freq band 6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2089,6 +2160,19 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1477958769}
+--- !u!114 &1477958773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1477958769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 191d82687da320b4080d0317bab7f142, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _band: 6
+  bandCols: []
 --- !u!1 &1500844942
 GameObject:
   m_ObjectHideFlags: 0
@@ -2259,7 +2343,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1588996562
 GameObject:
@@ -2458,7 +2542,7 @@ Transform:
   - {fileID: 1907630409}
   - {fileID: 1852959091}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1852959086
 GameObject:
@@ -2635,7 +2719,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1983139292
 GameObject:
