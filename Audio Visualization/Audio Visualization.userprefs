@@ -1,11 +1,11 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj" RefactoringSettings.EnableRefactorings="True">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\GenerateFreqAvgBandPath.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\GenerateTrackRealtime.cs">
     <Files>
-      <File FileName="Assets\Scripts\GenerateFreqAvgBandPath.cs" Line="135" Column="96" />
+      <File FileName="Assets\Scripts\GenerateTrackRealtime.cs" Line="189" Column="26" />
       <File FileName="Assets\Scripts\AudioPeer.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Roadifier.cs" Line="177" Column="16" />
-      <File FileName="Assets\Scripts\TriggerBasedOnFreqBand.cs" Line="19" Column="38" />
+      <File FileName="Assets\Scripts\Roadifier.cs" Line="166" Column="54" />
+      <File FileName="Assets\Scripts\TriggerBasedOnFreqBand.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

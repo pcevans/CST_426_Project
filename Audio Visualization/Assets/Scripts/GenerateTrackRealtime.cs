@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GenerateFreqAvgBandPath : MonoBehaviour {
+public class GenerateTrackRealtime : MonoBehaviour {
 	public GameObject trackPrefab;
 	public GameObject roadifier;
 	public GameObject car;
@@ -15,6 +15,7 @@ public class GenerateFreqAvgBandPath : MonoBehaviour {
 	List<Vector3> trackPoints = new List<Vector3> ();
 	List<GameObject> trackSegments = new List<GameObject> ();
 	int closestTrackIdx;
+	int lastVisibleTrackIdx;
 	Roadifier r;
 	//private Vector3[] trackPointArray = new Vector3[1000];
 
@@ -29,6 +30,7 @@ public class GenerateFreqAvgBandPath : MonoBehaviour {
 	bool runOnce;
 
 	void Start () {
+		lastVisibleTrackIdx = 0;
 		closestTrackIdx = 0;
 		r = roadifier.GetComponent<Roadifier> ();
 		lastCarPos = car.transform.position;
@@ -135,7 +137,7 @@ public class GenerateFreqAvgBandPath : MonoBehaviour {
 					GameObject obj = r.GenerateRoad (trackPoints.GetRange (trackPoints.Count - 3, posCount + 2));
 					trackSegments.Add (obj);
 					//if (trackPoints.Count > 50)
-					//	obj.SetActive (false);
+					//obj.SetActive (false);
 					
 				}
 
@@ -170,14 +172,26 @@ public class GenerateFreqAvgBandPath : MonoBehaviour {
 						trackSegments [i].SetActive (false);
 						//Debug.Log ("Deactivate " + i);
 					}
+					trackSegments [closestTrackIdx - dir * viewWindow].SetActive (false);
 				}
 
 				if ((dir == 1 && backCheck) || (dir == -1 & frontCheck)) {
 					for (int i = oldClosestTrackIdx + dir * viewWindow; i != closestTrackIdx + dir * viewWindow; i += dir) {
 						trackSegments [i].SetActive (true);
+
 						Debug.Log ("Activate " + i);
 					}
+					trackSegments [closestTrackIdx + dir * viewWindow].SetActive (true);
+					lastVisibleTrackIdx = closestTrackIdx + dir * viewWindow;
+					Debug.Log ("Activate " + (closestTrackIdx + dir * viewWindow));
 				}
+
+				int limit = Mathf.Min (trackSegments.Count - 1, closestTrackIdx + viewWindow);
+				for (int i = lastVisibleTrackIdx; i <= limit; i++) {
+					trackSegments [i].SetActive (true);
+				}
+				lastVisibleTrackIdx = limit;
+				
 			}
 
 

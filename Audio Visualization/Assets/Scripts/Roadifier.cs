@@ -9,7 +9,6 @@ public class Roadifier : MonoBehaviour {
 	public Material material;
 	public float terrainClearance = 0.05f;
 	private Mesh mesh;
-	private GameObject currRoad;
 	int roadNumber = 0;
 
 	public GameObject GenerateRoad (List<Vector3> points) {
@@ -165,7 +164,6 @@ public class Roadifier : MonoBehaviour {
 	private GameObject CreateGameObject (Mesh mesh, List<GameObject> sidings) {
 		//GameObject.Destroy (currRoad);
 		GameObject obj = new GameObject ("Roadifier Road");
-		currRoad = obj;
 		obj.AddComponent (typeof(MeshRenderer));
 		obj.AddComponent (typeof(MeshFilter));
 		obj.AddComponent (typeof(MeshCollider));

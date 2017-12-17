@@ -52,8 +52,8 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\AudioPeer.cs" />
-     <Compile Include="Assets\Scripts\GenerateFreqAvgBandPath.cs" />
      <Compile Include="Assets\Scripts\GenerateTrack.cs" />
+     <Compile Include="Assets\Scripts\GenerateTrackRealtime.cs" />
      <Compile Include="Assets\Scripts\Old\AddZ.cs" />
      <Compile Include="Assets\Scripts\Old\GenerateAmplitudeTerrain.cs" />
      <Compile Include="Assets\Scripts\Old\GenerateFreqBandTerrain.cs" />
